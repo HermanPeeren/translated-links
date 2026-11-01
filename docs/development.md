@@ -63,7 +63,7 @@ parameters, so `RoutineFactory` makes the repairer per run.
 ```bash
 curl -sSL -o joomla.tar.gz https://github.com/joomla/joomla-cms/releases/download/6.2.0/Joomla_6.2.0-Stable-Full_Package.tar.gz
 mkdir -p joomla && tar -xzf joomla.tar.gz -C joomla && rm joomla.tar.gz
-php joomla/installation/joomla.php install -n --site-name="Translated links dev" --admin-user=Admin --admin-username=admin --admin-password=<your-local-password> --admin-email=admin@example.invalid --db-type=mysqli --db-host=localhost --db-user=root --db-pass= --db-name=jlatest-translated-links --db-prefix=jtl_
+php joomla/installation/joomla.php install -n --site-name="Translated links dev" --admin-user=Admin --admin-username=yourusername --admin-password=yourpassword --admin-email=admin@example.invalid --db-type=mysqli --db-host=localhost --db-user=root --db-pass= --db-name=jlatest-translated-links --db-prefix=jtl_
 rm -rf joomla/installation
 composer install-local
 php tools/seed-dev-site.php

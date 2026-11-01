@@ -59,7 +59,7 @@ $db->execute_query(
     . " WHERE type = 'plugin' AND folder = 'system' AND element = 'languagefilter'"
 );
 
-$admin = (int) $value("SELECT id FROM {$prefix}users WHERE username = ?", ['admin']);
+$admin = (int) $value("SELECT user_id FROM {$prefix}user_usergroup_map WHERE group_id = 8 ORDER BY user_id LIMIT 1");
 $slug  = static fn (string $title): string => trim(strtolower((string) preg_replace('/\W+/', '-', $title)), '-');
 
 $article = static function (string $title, string $text, string $language) use ($db, $prefix, $now, $admin, $slug): int {
